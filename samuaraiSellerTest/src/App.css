@@ -58,3 +58,13 @@ ol.alternating-colors {
   background-color: #0d6efd;
   border-color: #0d6efd;
 }
+
+.errorTxt{
+  color: #D8000C;
+  background-color: #FFBABA;
+}
+
+.successTxt {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+}

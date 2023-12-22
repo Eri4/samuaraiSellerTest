@@ -5,6 +5,8 @@ import {Campaign} from "./types/interfaces.ts";
 
 function App() {
   const [campaignsData, setCampaignsData] = useState<Campaign[]>([]);
+  const [isSuccess, setIsSuccess] = useState(false)
+  const [isError, setIsError] = useState(false)
 
     useEffect(() => {
         fetch('/api/campaigns')
@@ -23,9 +25,15 @@ function App() {
         })
             .then(response => {
                 console.log('Success:', response);
+                setIsSuccess(true);
+                setIsError(false)
+                setTimeout(() => setIsSuccess(false), 10000);
             })
             .catch((error) => {
                 console.error('Error:', error);
+                setIsSuccess(false);
+                setIsError(true)
+                setTimeout(() => setIsError(false), 10000);
             });
     }
 
@@ -34,6 +42,8 @@ function App() {
           <strong>Test For Samurai Seller</strong>
           <CampaignView campaigns={campaignsData} setCampaignsData={setCampaignsData}/>
           <button className='saveBttn' onClick={saveHandler}>Save Campaign Changes</button>
+          {isSuccess && <p className='successTxt'>The Campaigns where updated with Success</p>}
+          {isError && <p className='errorTxt'>There was an Error during the update</p>}
       </>
   )
 }
