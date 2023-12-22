@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    font-family: 'Space Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    max-width: 420px;
+    padding: 32px;
+    margin: 60px auto;
+    border: 1px solid #eee;
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+* {
+-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizelegibility;
+    letter-spacing: -0.25px;
+}
